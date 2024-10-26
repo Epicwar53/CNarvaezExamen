@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CNarvaezExamen.Views.Registro"
+             Title="Registro">
+    <VerticalStackLayout Margin="20" 
+                         Spacing="20">
+
+            <Label x:Name="lblUsuarioConectado"
+               Text="Usuario Conectado: "
+               FontSize="18"
+               HorizontalOptions="Center"/>
+
+            
+            <Label Text="REGISTRO"
+               FontSize="22"
+               HorizontalOptions="Center"
+               TextColor="Blue"/>
+
+            <Grid RowSpacing="10" ColumnSpacing="10" Margin="0,20,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Nombre" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                <Entry x:Name="txtNombre" Grid.Row="0" Grid.Column="1" Placeholder="Ingresar Nombre"/>
+                <Label Text="Apellido" Grid.Row="0" Grid.Column="2" VerticalOptions="Center"/>
+                <Entry x:Name="txtApellido" Grid.Row="0" Grid.Column="3" Placeholder="Ingresar Apellido"/>
+                <Label Text="Voltiamperio (VA)" Grid.Row="0" Grid.Column="4" VerticalOptions="Center"/>
+                <Picker x:Name="pickerVA" Grid.Row="0" Grid.Column="5" Title="Seleccionar VA">
+                    <Picker.ItemsSource>
+                        
+                        <x:String>100 VA</x:String>
+                        <x:String>200 VA</x:String>
+                        <x:String>300 VA</x:String>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Grid>
+
+            
+            <Grid RowSpacing="10" ColumnSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Fecha" Grid.Row="0" Grid.Column="0" VerticalOptions="Center"/>
+                <DatePicker x:Name="datePickerFecha" Grid.Row="0" Grid.Column="1"/>
+
+                <Label Text="Ciudad" Grid.Row="1" Grid.Column="0" VerticalOptions="Center"/>
+                <Picker x:Name="pickerCiudad" Grid.Row="1" Grid.Column="1" Title="Seleccionar Ciudad">
+                    <Picker.ItemsSource>
+                        
+                        <x:String>Quito</x:String>
+                        <x:String>Guayaquil</x:String>
+                        <x:String>Cuenca</x:String>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Label Text="Monto Inicial" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>
+                <Entry x:Name="txtMontoInicial" Grid.Row="2" Grid.Column="1" Placeholder="Ingrese Monto Inicial"/>
+
+                <Label Text="Cuota Mensual:" Grid.Row="3" Grid.Column="0" VerticalOptions="Center"/>
+                <Entry x:Name="txtCuotaMensual" Grid.Row="3" Grid.Column="1" IsReadOnly="True"/>
+
+                <Button Text="Calcular Pago Mensual" Clicked="btnCalcular_Clicked" Grid.Row="4" Grid.ColumnSpan="2"/>
+            </Grid>
+
+            
+            <Button Text="Ver Resumen" Clicked="btnVerResumen_Clicked" />
+        </VerticalStackLayout>
+
+    </ContentPage>
